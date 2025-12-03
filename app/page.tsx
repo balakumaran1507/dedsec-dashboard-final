@@ -23,6 +23,10 @@ import AgentNetworkPage from "./agent-network/page"
 import OperationsPage from "./operations/page"
 import IntelligencePage from "./intelligence/page"
 import SystemsPage from "./systems/page"
+import ChatPage from "@/components/chat-page"
+import ProfilePage from "@/components/profile-page"
+import AnnouncementsPage from "@/components/announcements-page"
+import AdminPage from "@/components/admin-page"
 
 function PlaceholderPage({ title, icon: Icon, description }: { title: string; icon: any; description: string }) {
   return (
@@ -327,18 +331,10 @@ export default function TacticalDashboard() {
           {activeSection === "operations" && <OperationsPage />}
           {activeSection === "intelligence" && <IntelligencePage />}
           {activeSection === "systems" && <SystemsPage />}
-          {activeSection === "chat" && (
-            <PlaceholderPage title="TEAM CHAT" icon={MessageSquare} description="SECURE TEAM COMMUNICATION" />
-          )}
-          {activeSection === "profile" && (
-            <PlaceholderPage title="PLAYER PROFILE" icon={User} description="STATS, BADGES & SETTINGS" />
-          )}
-          {activeSection === "announcements" && (
-            <PlaceholderPage title="ANNOUNCEMENTS" icon={Megaphone} description="CTF ALERTS & TEAM NEWS" />
-          )}
-          {activeSection === "admin" && (
-            <PlaceholderPage title="ADMIN PANEL" icon={Settings} description="TEAM MANAGEMENT & CONFIG" />
-          )}
+          {activeSection === "chat" && <ChatPage />}
+          {activeSection === "profile" && <ProfilePage />}
+          {activeSection === "announcements" && <AnnouncementsPage />}
+          {activeSection === "admin" && <AdminPage />}
         </div>
       </div>
     </div>
